@@ -45,4 +45,3 @@ class CP:
                 except Exception as e:
                     print(e)
                     pass
-CP().Mode(0)
